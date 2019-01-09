@@ -1,0 +1,10 @@
+C:\Users\User\Documents\Visual Studio 2017\Projects\GraphicCycles\GraphicCycles\bin\Debug\GraphicCycles.exe.config
+C:\Users\User\Documents\Visual Studio 2017\Projects\GraphicCycles\GraphicCycles\bin\Debug\GraphicCycles.exe
+C:\Users\User\Documents\Visual Studio 2017\Projects\GraphicCycles\GraphicCycles\bin\Debug\GraphicCycles.pdb
+C:\Users\User\Documents\Visual Studio 2017\Projects\GraphicCycles\GraphicCycles\obj\Debug\GraphicCycles.csprojAssemblyReference.cache
+C:\Users\User\Documents\Visual Studio 2017\Projects\GraphicCycles\GraphicCycles\obj\Debug\GraphicCycles.Form1.resources
+C:\Users\User\Documents\Visual Studio 2017\Projects\GraphicCycles\GraphicCycles\obj\Debug\GraphicCycles.Properties.Resources.resources
+C:\Users\User\Documents\Visual Studio 2017\Projects\GraphicCycles\GraphicCycles\obj\Debug\GraphicCycles.csproj.GenerateResource.cache
+C:\Users\User\Documents\Visual Studio 2017\Projects\GraphicCycles\GraphicCycles\obj\Debug\GraphicCycles.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\Visual Studio 2017\Projects\GraphicCycles\GraphicCycles\obj\Debug\GraphicCycles.exe
+C:\Users\User\Documents\Visual Studio 2017\Projects\GraphicCycles\GraphicCycles\obj\Debug\GraphicCycles.pdb
