@@ -66,7 +66,6 @@ namespace GraphicCycles
                 graphics.DrawLine(pen, 0, y, 300, y);
                 Sleep(100);
             }
-            Refresh();
         }
 
         public void VerticallLines()
@@ -76,7 +75,6 @@ namespace GraphicCycles
                 graphics.DrawLine(pen, x, 0, x, 300);
                 Sleep(100);
             }
-            Refresh();
         }
 
         public void AllLines()
@@ -88,12 +86,10 @@ namespace GraphicCycles
                 graphics.DrawLine(pen, 0, y, 300, y);
                 Sleep(100);
             }
-            Refresh();
         }
 
         public void DiagLines()
         {
-
             //либо 2 цикла сделать
             for (int r = 0; r < 300; r+=30)
             {
@@ -102,7 +98,6 @@ namespace GraphicCycles
                 graphics.DrawLine(pen, r, 300, 300, r);
                 Sleep(200);
             }
-            Refresh();
         }
 
         public void ConeOfRays()
@@ -143,7 +138,6 @@ namespace GraphicCycles
                 graphics.DrawLine(pen, 300, 300, z, 0);
                 Sleep(100);
             }                     
-            Refresh();
         }
 
         public void Squares()
@@ -157,7 +151,6 @@ namespace GraphicCycles
                     Sleep(20);
                 }
             }
-            Refresh();
         }
 
         public void Squares1()
@@ -174,7 +167,6 @@ namespace GraphicCycles
                     }
                 }
             }
-            Refresh();
         }
 
         public void CreateTracery()
@@ -209,7 +201,6 @@ namespace GraphicCycles
                     }
                 }
             }
-            Refresh();
         }
 
         public void LinesInSquares()
@@ -235,7 +226,6 @@ namespace GraphicCycles
                     }
                 }
             }
-            Refresh();
         }
 
         public void CirclesInSquares()
@@ -251,11 +241,53 @@ namespace GraphicCycles
                         for (int yy = 6; yy < 24; yy += 6)
                         {
                             graphics.DrawEllipse(pen, x + xx, y + yy, 6, 6);
+                            Sleep(100);
                         }
                     }
                 }
             }
-            Refresh();
+        }
+
+        public void CosinusSinus()
+        {
+            for (int alpha = 0; alpha < 360; alpha+=10)
+            {
+                graphics.DrawLine(pen, 150, 150, 
+                                            150 + (float)Math.Cos(alpha/180.0*Math.PI) * 150, 
+                                            150 - (float)Math.Sin(alpha/180.0*Math.PI) * 150);
+                Sleep(100);
+            }
+        }
+
+        public void SpiralOfArkhimed()
+        {
+            float x = 150f;
+            float y = 150f;
+            float x1, y1;
+            float r = 0;
+            for (int alpha = 0; alpha <= 360*6; alpha += 20)
+            {
+                //r += 1f;
+                //радиус спирали, который увеличивается в зависимости от угла
+                r = alpha / 20f;            
+                //alpha / 180.0 * Math.PI - перевод в радианы для SIN и COS
+                x1 = 150 + (float)Math.Cos(alpha / 180.0 * Math.PI) * r;
+                y1 = 150 - (float)Math.Sin(alpha / 180.0 * Math.PI) * r;
+                graphics.DrawLine(pen, x, y, x1,y1);
+                //запоминаем текущие координаты и делаем их центром на следующей итерации
+                x = x1;
+                y = y1;
+                Sleep(1);
+            }
+        }
+
+        public void ArcLine(float alfa, float beta)
+        {
+            float x1 = 150 + (float)Math.Cos(alfa / 180 * Math.PI) * 150;
+            float y1 = 150 - (float)Math.Sin(alfa / 180 * Math.PI) * 150;
+            float x2 = 150 + (float)Math.Cos(beta / 180 * Math.PI) * 150;
+            float y2 = 150 - (float)Math.Sin(beta / 180 * Math.PI) * 150;
+            graphics.DrawLine(pen, x1, y1, x2, y2);
         }
 
         private void buttonLines_Click(object sender, EventArgs e)
@@ -312,6 +344,66 @@ namespace GraphicCycles
         private void buttonCirclesInSquares_Click(object sender, EventArgs e)
         {
             CirclesInSquares();
+        }
+
+        private void buttonCosinusSinus_Click(object sender, EventArgs e)
+        {
+            CosinusSinus();
+        }
+
+        private void buttonSpiralOfArkhimed_Click(object sender, EventArgs e)
+        {
+            SpiralOfArkhimed();
+        }
+
+        private void buttonArcLine_Click(object sender, EventArgs e)
+        {
+            int total = 180;
+            int koeff = 2;
+            //int koeff = 30;
+            //for (int n = 0; n < total; n++)
+            //{
+            //    ArcLine(n, n * koeff);
+            //    Sleep(100);
+            //}
+            try
+            {
+                koeff = int.Parse(Koeff.Text);
+            }
+            catch (Exception)
+            {
+                
+                koeff = 2;
+            }
+
+            for (int n = 0; n < total; n++)
+            {
+                ArcLine(2*n, 2*n * koeff);
+                Sleep(20);
+            }
+
+            //ArcLine(0, 90);
+            //ArcLine(90, 180);
+            //ArcLine(180, 270);
+            //ArcLine(270, 360);
+            //ArcLine(0,  180);
+        }
+
+        private void buttonAllArcLine_Click(object sender, EventArgs e)
+        {
+            int total = 180;
+            for (float koeff = 2; koeff < total; koeff+=0.1f)
+            {
+                Sleep(100);
+                Clear();
+                Counter.Text = koeff.ToString();
+                for (int n = 0; n < total; n++)
+                {
+                    ArcLine(2 * n, 2 * n * koeff);
+//                    Sleep(20);
+                }
+                Refresh();
+            }
         }
     }
 }

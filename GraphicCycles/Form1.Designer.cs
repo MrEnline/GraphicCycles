@@ -42,13 +42,19 @@
             this.buttonTracery1 = new System.Windows.Forms.Button();
             this.buttonLinesInSquares = new System.Windows.Forms.Button();
             this.buttonCirclesInSquares = new System.Windows.Forms.Button();
+            this.buttonCosinusSinus = new System.Windows.Forms.Button();
+            this.buttonSpiralOfArkhimed = new System.Windows.Forms.Button();
+            this.buttonArcLine = new System.Windows.Forms.Button();
+            this.Koeff = new System.Windows.Forms.TextBox();
+            this.buttonAllArcLine = new System.Windows.Forms.Button();
+            this.Counter = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pictureBox1.Location = new System.Drawing.Point(24, 168);
+            this.pictureBox1.Location = new System.Drawing.Point(24, 206);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(301, 301);
             this.pictureBox1.TabIndex = 0;
@@ -184,11 +190,73 @@
             this.buttonCirclesInSquares.UseVisualStyleBackColor = true;
             this.buttonCirclesInSquares.Click += new System.EventHandler(this.buttonCirclesInSquares_Click);
             // 
+            // buttonCosinusSinus
+            // 
+            this.buttonCosinusSinus.Location = new System.Drawing.Point(24, 110);
+            this.buttonCosinusSinus.Name = "buttonCosinusSinus";
+            this.buttonCosinusSinus.Size = new System.Drawing.Size(94, 23);
+            this.buttonCosinusSinus.TabIndex = 14;
+            this.buttonCosinusSinus.Text = "Cosinus";
+            this.buttonCosinusSinus.UseVisualStyleBackColor = true;
+            this.buttonCosinusSinus.Click += new System.EventHandler(this.buttonCosinusSinus_Click);
+            // 
+            // buttonSpiralOfArkhimed
+            // 
+            this.buttonSpiralOfArkhimed.Location = new System.Drawing.Point(24, 139);
+            this.buttonSpiralOfArkhimed.Name = "buttonSpiralOfArkhimed";
+            this.buttonSpiralOfArkhimed.Size = new System.Drawing.Size(105, 23);
+            this.buttonSpiralOfArkhimed.TabIndex = 15;
+            this.buttonSpiralOfArkhimed.Text = "SpiralOfArkhimed";
+            this.buttonSpiralOfArkhimed.UseVisualStyleBackColor = true;
+            this.buttonSpiralOfArkhimed.Click += new System.EventHandler(this.buttonSpiralOfArkhimed_Click);
+            // 
+            // buttonArcLine
+            // 
+            this.buttonArcLine.Location = new System.Drawing.Point(254, 110);
+            this.buttonArcLine.Name = "buttonArcLine";
+            this.buttonArcLine.Size = new System.Drawing.Size(86, 23);
+            this.buttonArcLine.TabIndex = 16;
+            this.buttonArcLine.Text = "ArcLine";
+            this.buttonArcLine.UseVisualStyleBackColor = true;
+            this.buttonArcLine.Click += new System.EventHandler(this.buttonArcLine_Click);
+            // 
+            // Koeff
+            // 
+            this.Koeff.Location = new System.Drawing.Point(255, 139);
+            this.Koeff.Name = "Koeff";
+            this.Koeff.Size = new System.Drawing.Size(85, 20);
+            this.Koeff.TabIndex = 17;
+            this.Koeff.Text = "2";
+            // 
+            // buttonAllArcLine
+            // 
+            this.buttonAllArcLine.Location = new System.Drawing.Point(24, 168);
+            this.buttonAllArcLine.Name = "buttonAllArcLine";
+            this.buttonAllArcLine.Size = new System.Drawing.Size(86, 23);
+            this.buttonAllArcLine.TabIndex = 18;
+            this.buttonAllArcLine.Text = "AllArcLine";
+            this.buttonAllArcLine.UseVisualStyleBackColor = true;
+            this.buttonAllArcLine.Click += new System.EventHandler(this.buttonAllArcLine_Click);
+            // 
+            // Counter
+            // 
+            this.Counter.Location = new System.Drawing.Point(133, 170);
+            this.Counter.Name = "Counter";
+            this.Counter.Size = new System.Drawing.Size(85, 20);
+            this.Counter.TabIndex = 19;
+            this.Counter.Text = "0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(352, 471);
+            this.ClientSize = new System.Drawing.Size(352, 519);
+            this.Controls.Add(this.Counter);
+            this.Controls.Add(this.buttonAllArcLine);
+            this.Controls.Add(this.Koeff);
+            this.Controls.Add(this.buttonArcLine);
+            this.Controls.Add(this.buttonSpiralOfArkhimed);
+            this.Controls.Add(this.buttonCosinusSinus);
             this.Controls.Add(this.buttonCirclesInSquares);
             this.Controls.Add(this.buttonLinesInSquares);
             this.Controls.Add(this.buttonTracery1);
@@ -211,6 +279,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -230,6 +299,12 @@
         private System.Windows.Forms.Button buttonTracery1;
         private System.Windows.Forms.Button buttonLinesInSquares;
         private System.Windows.Forms.Button buttonCirclesInSquares;
+        private System.Windows.Forms.Button buttonCosinusSinus;
+        private System.Windows.Forms.Button buttonSpiralOfArkhimed;
+        private System.Windows.Forms.Button buttonArcLine;
+        private System.Windows.Forms.TextBox Koeff;
+        private System.Windows.Forms.Button buttonAllArcLine;
+        private System.Windows.Forms.TextBox Counter;
     }
 }
 
