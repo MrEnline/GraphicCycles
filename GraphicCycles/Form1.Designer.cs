@@ -48,13 +48,17 @@
             this.Koeff = new System.Windows.Forms.TextBox();
             this.buttonAllArcLine = new System.Windows.Forms.Button();
             this.Counter = new System.Windows.Forms.TextBox();
+            this.buttonSpirograph = new System.Windows.Forms.Button();
+            this.RadiusA = new System.Windows.Forms.TextBox();
+            this.RadiusB = new System.Windows.Forms.TextBox();
+            this.PenPosition = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pictureBox1.Location = new System.Drawing.Point(24, 206);
+            this.pictureBox1.Location = new System.Drawing.Point(24, 286);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(301, 301);
             this.pictureBox1.TabIndex = 0;
@@ -246,11 +250,49 @@
             this.Counter.TabIndex = 19;
             this.Counter.Text = "0";
             // 
+            // buttonSpirograph
+            // 
+            this.buttonSpirograph.Location = new System.Drawing.Point(24, 207);
+            this.buttonSpirograph.Name = "buttonSpirograph";
+            this.buttonSpirograph.Size = new System.Drawing.Size(86, 23);
+            this.buttonSpirograph.TabIndex = 20;
+            this.buttonSpirograph.Text = "Spirograph";
+            this.buttonSpirograph.UseVisualStyleBackColor = true;
+            this.buttonSpirograph.Click += new System.EventHandler(this.buttonSpirograph_Click);
+            // 
+            // RadiusA
+            // 
+            this.RadiusA.Location = new System.Drawing.Point(116, 209);
+            this.RadiusA.Name = "RadiusA";
+            this.RadiusA.Size = new System.Drawing.Size(85, 20);
+            this.RadiusA.TabIndex = 21;
+            this.RadiusA.Text = "0";
+            // 
+            // RadiusB
+            // 
+            this.RadiusB.Location = new System.Drawing.Point(207, 209);
+            this.RadiusB.Name = "RadiusB";
+            this.RadiusB.Size = new System.Drawing.Size(85, 20);
+            this.RadiusB.TabIndex = 22;
+            this.RadiusB.Text = "0";
+            // 
+            // PenPosition
+            // 
+            this.PenPosition.Location = new System.Drawing.Point(116, 235);
+            this.PenPosition.Name = "PenPosition";
+            this.PenPosition.Size = new System.Drawing.Size(85, 20);
+            this.PenPosition.TabIndex = 23;
+            this.PenPosition.Text = "0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(352, 519);
+            this.ClientSize = new System.Drawing.Size(357, 599);
+            this.Controls.Add(this.PenPosition);
+            this.Controls.Add(this.RadiusB);
+            this.Controls.Add(this.RadiusA);
+            this.Controls.Add(this.buttonSpirograph);
             this.Controls.Add(this.Counter);
             this.Controls.Add(this.buttonAllArcLine);
             this.Controls.Add(this.Koeff);
@@ -305,6 +347,10 @@
         private System.Windows.Forms.TextBox Koeff;
         private System.Windows.Forms.Button buttonAllArcLine;
         private System.Windows.Forms.TextBox Counter;
+        private System.Windows.Forms.Button buttonSpirograph;
+        private System.Windows.Forms.TextBox RadiusA;
+        private System.Windows.Forms.TextBox RadiusB;
+        private System.Windows.Forms.TextBox PenPosition;
     }
 }
 

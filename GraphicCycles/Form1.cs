@@ -290,6 +290,49 @@ namespace GraphicCycles
             graphics.DrawLine(pen, x1, y1, x2, y2);
         }
 
+        public void Spirograph()
+        {
+            bool flag;
+            int radiusB, penPosition;
+            float x, y;
+            flag = CheckNumber(RadiusB.Text) && CheckNumber(PenPosition.Text);
+            if (!flag)
+                return;
+
+            //radiusA = Int32.Parse(RadiusA.Text);
+            radiusB = Int32.Parse(RadiusB.Text);
+            penPosition = Int32.Parse(PenPosition.Text);
+            x = 0;
+            y = 0;
+
+            for (int alfa = 0; alfa < 360*4; alfa+=10)
+            {
+                float x1 = 150 + (float)(150 - radiusB) * (float)Math.Cos(alfa / 180 * Math.PI)*150 + penPosition*(float)Math.Cos(((150 - radiusB)/radiusB)*(alfa / 180 * Math.PI)) * 150;
+                float y1 = 150 + (float)(150 - radiusB) * (float)Math.Sin(alfa / 180 * Math.PI) * 150 - penPosition * (float)Math.Sin(((150 - radiusB) / radiusB) * (alfa / 180 * Math.PI)) * 150;
+
+                graphics.DrawLine(pen, x, y, x1, y1);
+                x = x1;
+                y = y1;
+                //Sleep(100);
+                Refresh();
+            }
+        }
+
+        private bool CheckNumber(string inputNumber)
+        {
+            int temp;
+            try
+            {
+                temp = Int32.Parse(inputNumber);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return false;
+        }
+
         private void buttonLines_Click(object sender, EventArgs e)
         {
             HorizontalLines();
@@ -404,6 +447,11 @@ namespace GraphicCycles
                 }
                 Refresh();
             }
+        }
+
+        private void buttonSpirograph_Click(object sender, EventArgs e)
+        {
+            Spirograph();
         }
     }
 }
